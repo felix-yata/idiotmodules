@@ -54,23 +54,23 @@ class ToadBotMod(loader.Module):
             if job == "Поход в столовую":
                 while self.get("job"):
                     await message.respond("Поход в столовую")
-                    await asyncio.sleep(7200)
-                    await message.respond("Забрать жабу с работы")
-                    await asyncio.sleep(21600)
+                    await asyncio.sleep(7260)
+                    await message.respond("Завершить работу")
+                    await asyncio.sleep(21660)
                 return
             elif job == "Работа грабитель":
                 while self.get("job"):
                     await message.respond("Работа грабитель")
-                    await asyncio.sleep(7200)
-                    await message.respond("Забрать жабу с работы")
-                    await asyncio.sleep(21600)
+                    await asyncio.sleep(7260)
+                    await message.respond("Завершить работу")
+                    await asyncio.sleep(21660)
                 return
             elif job == "Работа крупье":
                 while self.get("job"):
                     await message.respond("Работа крупье")
-                    await asyncio.sleep(7200)
-                    await message.respond("Забрать жабу с работы")
-                    await asyncio.sleep(21600)
+                    await asyncio.sleep(7260)
+                    await message.respond("Завершить работу"")
+                    await asyncio.sleep(21660)
                 return
 
     @loader.command()
@@ -93,8 +93,8 @@ class ToadBotMod(loader.Module):
                 while self.get("eat"):
                     await message.respond("Покормить жабу")
                     await asyncio.sleep(0.5)
-                    await message.respond("Жаба успешно покормлена.\n\nСледующая команда будет произведена через 12 часов.")
-                    await asyncio.sleep(43200)
+                    await message.respond("Жаба успешно покормлена.\n\nСледующая команда будет произведена через 6 часов.")
+                    await asyncio.sleep(21660)
                 
     @loader.watcher()
     async def watcher(self, message):
