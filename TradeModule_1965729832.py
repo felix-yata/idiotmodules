@@ -45,7 +45,7 @@ class TradeModule(loader.Module):
                     await message.respond("⚠️ Не удалось получить данные о ценах.")
             else:
                 await message.respond("⚠️ Не получен ответ от биржи.")
-            await asyncio.sleep(52)
+            await asyncio.sleep(600)
     async def purcmd(self, message):
         """Покупает по максимальной цене покупки"""
         target_user_id = 5443619563
