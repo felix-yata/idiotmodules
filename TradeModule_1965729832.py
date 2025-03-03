@@ -20,15 +20,27 @@ class TradeModule(loader.Module):
             if response:
                 min_sell, max_buy = await self.parse_exchange(response)
                 if min_sell is not None and max_buy is not None:
-                    if min_sell - max_buy < 0.05:
-                        await asyncio.sleep(240)
+                    if min_sell - max_buy < 0.02:
+                        await asyncio.sleep(2.5)
+                        await self.client.send_message(
+                            target_user_id, f".Биржа продать 99999 {min_sell:.2f}")
+                        await asyncio.sleep(2.5)
+                        await self.client.send_message(
+                            target_user_id, f".Биржа купить 99999 {max_buy + 0.01:.2f}")
+                    if min_sell - max_buy < 0.03:
+                        await asyncio.sleep(2.5)
+                        await self.client.send_message(
+                            target_user_id, f".Биржа продать 99999 {min_sell:.2f}")
+                        await asyncio.sleep(2.5)
+                        await self.client.send_message(
+                            target_user_id, f".Биржа купить 99999 {max_buy + 0.01:.2f}")
                     else:
                         await asyncio.sleep(2.5)
                         await self.client.send_message(
-                            target_user_id, f".Биржа продать 999 {min_sell - 0.01:.2f}")
+                            target_user_id, f".Биржа продать 99999 {min_sell - 0.01:.2f}")
                         await asyncio.sleep(2.5)
                         await self.client.send_message(
-                            target_user_id, f".Биржа купить 999 {max_buy + 0.01:.2f}")
+                            target_user_id, f".Биржа купить 99999 {max_buy + 0.01:.2f}")
                 else:
                     await message.respond("⚠️ Не удалось получить данные о ценах.")
             else:
